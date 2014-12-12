@@ -98,3 +98,13 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
+
+
+## Tastypie mongoengine config ##
+# INSTALLED_APPS += (
+#     'tastypie',
+#     'tastypie_mongoengine',
+# )
+# MONGO_DATABASE_NAME = 'database'
+# mongoengine.connect(MONGO_DATABASE_NAME)
+

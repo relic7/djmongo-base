@@ -11,13 +11,13 @@ class Image(EmbeddedDocument):
     uploads = IntField(default=0)
     colorstyle = StringField(max_length=9)
     alt = IntField(default=1)
-    ext = StringField(max_length=4)
+    format = StringField(max_length=4)
     create_dt = DateTimeField(help_text='image_create_dt')
     modify_dt = DateTimeField(help_text='modify_dt')
     meta = {
         'indexes': [
             'colorstyle',
-            ('ext', '+colorstyle')
+            ('format', '+colorstyle')
         ]
     }
 
