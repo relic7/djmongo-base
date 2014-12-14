@@ -1,5 +1,5 @@
 """
-Django settings for mongodjBare project.
+Django settings for basemgd project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.7/topics/settings/
@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ')foz$k3t)f&pj1(-nz8%9*(=m@(qa(r0g0xln^p@+0&2#27&ap'
+SECRET_KEY = '=m(g#+3g+un6nt97%hmzc#$!9^jc0j1h#%y=1#tf1ri&+)jl(&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -36,7 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'mongodj',
+    'base',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -49,11 +49,13 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'mongodj.urls'
+ROOT_URLCONF = 'basemgd.urls'
 
-WSGI_APPLICATION = 'mongodj.wsgi.application'
+WSGI_APPLICATION = 'basemgd.wsgi.application'
 
 
+# Database
+# https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 # Database
 import mongoengine
 
@@ -65,11 +67,11 @@ DATABASES = {
 
 SESSION_ENGINE = 'mongoengine.django.sessions' # optional
 
-_MONGODB_USER = ''
-_MONGODB_PASSWD = ''
+_MONGODB_USER = 'mongo'
+_MONGODB_PASSWD = 'mongo'
 _MONGODB_HOST = '127.0.0.1:27017'
 _MONGODB_NAME = 'images'
-_MONGODB_DATABASE_HOST = 'mongodb://%s/%s' % (_MONGODB_HOST, _MONGODB_NAME)
+_MONGODB_DATABASE_HOST = 'mongodb://%s:%s@%s/%s' % (_MONGODB_USER, _MONGODB_PASSWD, _MONGODB_HOST, _MONGODB_NAME)
 #_MONGODB_DATABASE_HOST = 'mongodb://%s:%s@%s/%s' % (_MONGODB_USER, _MONGODB_PASSWD, _MONGODB_HOST, _MONGODB_NAME)
 
 mongoengine.connect(_MONGODB_NAME, host=_MONGODB_DATABASE_HOST)
@@ -78,14 +80,14 @@ AUTHENTICATION_BACKENDS = (
     'mongoengine.django.auth.MongoEngineBackend',
 )
 
-TEST_RUNNER = 'md5checks.tests.NoSQLTestRunner'
+TEST_RUNNER = 'base.tests.NoSQLTestRunner'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'America/New_York'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
@@ -93,21 +95,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
-# MEDIA_URL = '/media/'
-
-
-
-
-
-## Tastypie mongoengine config ##
-# INSTALLED_APPS += (
-#     'tastypie',
-#     'tastypie_mongoengine',
-# )
-# MONGO_DATABASE_NAME = 'database'
-# mongoengine.connect(MONGO_DATABASE_NAME)
-

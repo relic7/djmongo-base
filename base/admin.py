@@ -1,9 +1,12 @@
 from django.contrib import admin
 
 # Register your models here.
+from django.contrib import admin
+
+# Register your models here.
 from mongoadmin import site, DocumentAdmin
 
-from md5checks.models import Image, Product
+from base.models import Image, Product
 
 class ImageAdmin(DocumentAdmin):
     pass
