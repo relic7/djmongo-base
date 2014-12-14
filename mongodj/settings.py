@@ -65,11 +65,12 @@ DATABASES = {
 
 SESSION_ENGINE = 'mongoengine.django.sessions' # optional
 
-_MONGODB_USER = 'mongouser'
-_MONGODB_PASSWD = 'password'
+_MONGODB_USER = ''
+_MONGODB_PASSWD = ''
 _MONGODB_HOST = '127.0.0.1:27017'
 _MONGODB_NAME = 'images'
-_MONGODB_DATABASE_HOST = 'mongodb://%s:%s@%s/%s' % (_MONGODB_USER, _MONGODB_PASSWD, _MONGODB_HOST, _MONGODB_NAME)
+_MONGODB_DATABASE_HOST = 'mongodb://%s/%s' % (_MONGODB_HOST, _MONGODB_NAME)
+#_MONGODB_DATABASE_HOST = 'mongodb://%s:%s@%s/%s' % (_MONGODB_USER, _MONGODB_PASSWD, _MONGODB_HOST, _MONGODB_NAME)
 
 mongoengine.connect(_MONGODB_NAME, host=_MONGODB_DATABASE_HOST)
 
@@ -96,6 +97,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+# MEDIA_URL = '/media/'
+
 
 
 
