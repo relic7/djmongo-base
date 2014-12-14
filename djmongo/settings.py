@@ -49,9 +49,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'basemgd.urls'
+ROOT_URLCONF = 'djmongo.urls'
 
-WSGI_APPLICATION = 'basemgd.wsgi.application'
+WSGI_APPLICATION = 'djmongo.wsgi.application'
 
 
 # Database
