@@ -40,6 +40,28 @@ INSTALLED_APPS = (
     'base',
 )
 
+
+# Database
+# https://docs.djangoproject.com/en/1.7/ref/settings/#databases
+# Database
+import mongoengine
+
+
+DATABASES = {
+   'default' : {
+      #'ENGINE' : 'django_mongodb_engine',
+      #'ENGINE' : 'django.db.backends.dummy',
+      'ENGINE' : 'django_mongodb_engine.mongodb',
+#      'NAME' : 'images',
+#      'USER' : 'mongo',
+#      'PASSWORD': 'mongo',
+#      'HOST': '127.0.0.1',
+#      'PORT': '27017',
+#      'SUPPORTS_TRANSACTIONS': False
+}
+}
+
+
 AUTH_USER_MODEL = 'mongo_auth.MongoUser'
 
 
@@ -59,25 +81,6 @@ ROOT_URLCONF = 'djmongo.urls'
 WSGI_APPLICATION = 'djmongo.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/1.7/ref/settings/#databases
-# Database
-import mongoengine
-
-
-DATABASES = {
-   'default' : {
-      #'ENGINE' : 'django_mongodb_engine',
-      'ENGINE' : 'django.db.backends.dummy',
-      #'ENGINE' : 'django_mongodb_engine.mongodb',
-#      'NAME' : 'images',
-#      'USER' : 'mongo',
-#      'PASSWORD': 'mongo',
-#      'HOST': '127.0.0.1',
-#      'PORT': '27017',
-#      'SUPPORTS_TRANSACTIONS': False
-}
-}
 
 SESSION_ENGINE = 'mongoengine.django.sessions' # optional
 SESSION_SERIALIZER = 'mongoengine.django.sessions.BSONSerializer'
