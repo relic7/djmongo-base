@@ -1,4 +1,4 @@
-Django==1.6.5
+#Django==1.6.5 Nonrel version from github
 bcrypt
 cffi
 cryptography
