@@ -32,12 +32,17 @@ ALLOWED_HOSTS = ["*"]
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
+    'mongoengine.django.mongo_auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'base',
 )
+
+AUTH_USER_MODEL = 'mongo_auth.MongoUser'
+
+
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -62,16 +67,20 @@ import mongoengine
 
 DATABASES = {
    'default' : {
-      'ENGINE' : 'django_mongodb_engine',
-      'NAME' : 'images',
-      'USER' : 'mongo',
-      'PASSWORD': 'mongo',
-      'HOST': '127.0.0.1',
-      'PORT': '27017'
-   }
+      #'ENGINE' : 'django_mongodb_engine',
+      'ENGINE' : 'django.db.backends.dummy',
+#      'NAME' : 'images',
+#      'USER' : 'mongo',
+#      'PASSWORD': 'mongo',
+#      'HOST': '127.0.0.1',
+#      'PORT': '27017',
+#      'SUPPORTS_TRANSACTIONS': False
+}
 }
 
 SESSION_ENGINE = 'mongoengine.django.sessions' # optional
+SESSION_SERIALIZER = 'mongoengine.django.sessions.BSONSerializer'
+
 
 _MONGODB_USER = 'mongo'
 _MONGODB_PASSWD = 'mongo'
