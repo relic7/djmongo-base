@@ -52,8 +52,8 @@ AUTH_USER_MODEL = 'mongo_auth.MongoUser'
 DATABASES = {
    'default' : {
       #'ENGINE' : 'django_mongodb_engine',
-      #'ENGINE' : 'django.db.backends.dummy',
-     'ENGINE' : 'django_mongodb_engine.mongodb',
+     'ENGINE' : 'django.db.backends.dummy',
+     #'ENGINE' : 'django_mongodb_engine.mongodb',
      'NAME' : 'images',
      'USER' : 'mongo',
      'PASSWORD': 'mongo',
