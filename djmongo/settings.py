@@ -44,7 +44,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+    #'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -59,10 +59,16 @@ WSGI_APPLICATION = 'djmongo.wsgi.application'
 # Database
 import mongoengine
 
+
 DATABASES = {
-    'default': {
-        'ENGINE': '',
-    },
+   'default' : {
+      'ENGINE' : 'django_mongodb_engine',
+      'NAME' : 'images',
+      'USER' : 'mongo',
+      'PASSWORD': 'mongo',
+      'HOST': '127.0.0.1',
+      'PORT': '27017'
+   }
 }
 
 SESSION_ENGINE = 'mongoengine.django.sessions' # optional
