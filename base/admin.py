@@ -1,10 +1,10 @@
 # Register your models here.
-from django.contrib import admin
+#from django.contrib import admin
 
 # Register your models here.
 from mongoadmin import site, DocumentAdmin
 
-from base.models import Image, Product
+from base.models import Image, ProductAdmin
 
 class ImageAdmin(DocumentAdmin):
     pass

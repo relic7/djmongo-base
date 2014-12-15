@@ -24,7 +24,7 @@ class Image(EmbeddedDocument):
 class Product(Document):
     colorstyle = StringField(max_length=9)
     modify_dt  = DateTimeField(help_text='modify_dt')
-    #images    = ListField(EmbeddedDocumentField(Image))
+    images    = ListField(EmbeddedDocumentField(Image))
     meta = {
         'indexes': [
             'colorstyle',
