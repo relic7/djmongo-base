@@ -47,12 +47,12 @@ DATABASES = {
      'ENGINE' : 'django_mongodb_engine',
      #'ENGINE' : 'django.db.backends.dummy',
      #'ENGINE' : 'django_mongodb_engine.mongodb',
-     # 'NAME' : 'images',
-     # 'USER' : 'mongo',
-     # 'PASSWORD': 'mongo',
-     # 'HOST': '127.0.0.1',
-     # 'PORT': '27017',
-     # 'SUPPORTS_TRANSACTIONS': False
+     'NAME' : 'images',
+     'USER' : 'mongo',
+     'PASSWORD': 'mongo',
+     'HOST': '127.0.0.1',
+     'PORT': '27017',
+     'SUPPORTS_TRANSACTIONS': False
 }
 }
 
