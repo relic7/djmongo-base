@@ -5,6 +5,8 @@
 ## md5checks/models.py
 
 from mongoengine import *
+from django.contrib.auth import login #, User
+from mongoengine.queryset import DoesNotExist
 
 class Image(EmbeddedDocument):
     md5_checksum = StringField(max_length=80)

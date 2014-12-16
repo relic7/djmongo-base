@@ -4,7 +4,7 @@
 # Register your models here.
 from mongoadmin import site, DocumentAdmin
 
-from base.models import Image, ProductAdmin
+from base.models import Image, Product
 
 class ImageAdmin(DocumentAdmin):
     pass
