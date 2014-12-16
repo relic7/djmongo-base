@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-import base, md5checks
+import base.views
 
 urlpatterns = patterns('',
     # Examples:
