@@ -124,7 +124,7 @@ MEDIA_URL =  '/media/'
 
 MONGO_DATABASE_NAME = 'images'
 
-AUTH_USER_MODEL = 'mongo_auth.MongoUser'
+#AUTH_USER_MODEL = 'mongo_auth.MongoUser'
 MONGOENGINE_USER_DOCUMENT = 'mongoengine.django.auth.User'
 
 SESSION_ENGINE = 'mongoengine.django.sessions'
