@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'base',
+    'md5checks',
 )
 
 
@@ -53,9 +54,8 @@ DATABASES = {
      'HOST': '127.0.0.1',
      'PORT': '27017',
      'SUPPORTS_TRANSACTIONS': False
+    }
 }
-}
-
 
 
 MIDDLEWARE_CLASSES = (
@@ -63,7 +63,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+    #'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -72,9 +72,33 @@ ROOT_URLCONF = 'djmongo.urls'
 
 WSGI_APPLICATION = 'djmongo.wsgi.application'
 
-
-
 TEST_RUNNER = 'base.tests.NoSQLTestRunner'
+
+####### Templates #########
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'templates'),
+    os.path.join(BASE_DIR, 'templates/base'),
+    #os.path.join(BASE_DIR, 'templates/admin'),
+    os.path.join(BASE_DIR, 'templates/md5checks'),
+)
+
+# List of callables that know how to import templates from various sources.
+TEMPLATE_LOADERS = (
+    'django.template.loaders.app_directories.Loader',
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.eggs.Loader',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    'django.core.context_processors.request',
+    'django.contrib.messages.context_processors.messages',
+)
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
@@ -101,6 +125,9 @@ MONGO_DATABASE_NAME = 'images'
 
 AUTH_USER_MODEL = 'mongo_auth.MongoUser'
 MONGOENGINE_USER_DOCUMENT = 'mongoengine.django.auth.User'
+
+SESSION_ENGINE = 'mongoengine.django.sessions'
+SESSION_SERIALIZER = 'mongoengine.django.sessions.BSONSerializer'
 
 
 _MONGODB_USER = 'mongo'

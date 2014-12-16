@@ -8,7 +8,7 @@ bcrypt
 cffi
 cryptography
 #django-bootstrap-admin
-#django-compressor
+django-compressor
 #django-bootstrap3
 gnureadline
 html5lib

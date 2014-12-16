@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html>
-    <head lang="en">
-      <meta charset="UTF-8">
-      <title>{% block title %}MD5 Checksumin{% endblock %}</title>
-      <!-- Latest compiled and minified CSS & JS -->
-      <link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-    </head>
-<body>
+{% extends '_layouts/base.html' %}
+{% block page_title %}MD5 Checksumin{% endblock %}
+
+
 {% block content %}
+    <h3>TestHome</h3>
+    <a href="md5checks/">Link to Md5Checks</a>
 {% endblock  %}
 
 {% block footer %}
@@ -16,6 +12,3 @@
 
 {% block extra_js %}
 {% endblock %}
-
-</body>
-</html>
