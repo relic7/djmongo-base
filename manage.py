@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 import os
 import sys
-from mongoengine import *
-import mongoengine.django as django
+#from mongoengine import *
+#import mongoengine.django as django
+
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "djmongo.settings")
 
