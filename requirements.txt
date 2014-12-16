@@ -1,7 +1,9 @@
-#Django==1.6.5 Nonrel version from github
-#https://github.com/django-nonrel/djangotoolbox/tarball/master
-#https://github.com/django-nonrel/django/tarball/nonrel-1.5
-#https://github.com/django-nonrel/django-dbindexer/tarball/master
+
+#Django==1.5 Nonrel version from github
+git+https://github.com/django-nonrel/djangotoolbox
+git+https://github.com/django-nonrel/django@nonrel-1.5
+git+https://github.com/django-nonrel/mongodb-engine
+git+https://github.com/django-nonrel/django-dbindexer
 bcrypt
 cffi
 cryptography
