@@ -1,0 +1,9 @@
+{% extends 'base/home.html' %}
+
+
+{% block content %}
+<h3>ListContents</h3>
+    {% for r in request.items %}
+    <h5>r.name</h5>
+    {% endfor %}
+{% endblock  %}
